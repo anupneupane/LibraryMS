@@ -1,0 +1,70 @@
+﻿@page "/book-detail/{bookId}"
+
+@inherits AddBookBase.AddBookBase
+
+
+@code {
+    [Parameter]
+    public string? bookId { get; set; }
+}
+
+@{
+
+    var id = Convert.ToInt32(bookId);
+    var book = GetBookByID(id);
+}
+
+
+<PageTitle>Book Detail</PageTitle>
+<div class="container-fluid">
+    <div class="row">
+
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo.png" width="80" height="80" class="d-inline-block align-top" alt="">
+                Library MS Project Group 8
+            </a>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="text-center">
+        <img src="@book.BookImage" style="width:30%" alt="@book.Title" title="@book.Title" />
+        <div class="book-title">@book.Title</div>
+        <div class="description">@book.Description</div>
+    </div>
+    <br />
+    <br />
+    <h2 style="text-align:center"> Issue / Return This Book</h2>
+    <div class="row">
+        <div class="col-md-6 text-end">
+            <label>Your Action</label>
+        </div>
+        <div class="col-md-2 text-start">
+            <select class="form-control">
+                <option>Issue</option>
+                <option>Return</option>
+          
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-end">
+            <label>Member ID</label>
+        </div>
+        <div class="col-md-2 text-start">
+            <input type="number" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-end">
+        </div>
+        <br />
+        <br />
+        <div class="col-md-2 text-start">
+            <button class="btn btn-primary">Issue/Return</button>
+        </div>
+
+    </div>
+</div>
