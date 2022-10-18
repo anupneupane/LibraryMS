@@ -27,7 +27,7 @@ namespace LibraryMS.Data
             }
         }
 
-        public Book getItemByID(int id)
+        public Book getBookByID(int id)
         {
             using (LibraryMSDBContext ctx = new LibraryMSDBContext())
             {

@@ -1,19 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using LibraryMS.Data;
+using LibraryMS.Models;
+using Microsoft.AspNetCore.Components;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
-namespace LibraryMS.Pages
+namespace AddBookBase
 {
-    public class AddBookBase : Controller
+
+    public class AddBookBase : ComponentBase
     {
-        // GET: /<controller>/
-        public IActionResult Index()
+
+        public Book Book
         {
-            return View();
+            get;
+            set;
+        }
+
+        protected override Task OnInitializedAsync()
+        {
+            Book = new Book();
+
+            return base.OnInitializedAsync();
+        }
+
+        public void SaveBook()
+        {
+            using (LibraryMSDAL dal = new LibraryMSDAL())
+            {
+                dal.saveBooks(Book);
+            }
+        }
+
+        public List<Book> GetBooks()
+        {
+            using (LibraryMSDAL dal = new LibraryMSDAL())
+            {
+                List<Book> books = dal.getBooks();
+                return books;
+            }
+        }
+
+        public Book GetBookByID(int id)
+        {
+            using (LibraryMSDAL dal = new LibraryMSDAL())
+            {
+                Book book = dal.getBookByID(id);
+                return book;
+            }
         }
     }
 }
