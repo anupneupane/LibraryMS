@@ -13,7 +13,7 @@ namespace AddBookBase
         {
             get;
             set;
-        }
+        } = default!;
 
         protected override Task OnInitializedAsync()
         {

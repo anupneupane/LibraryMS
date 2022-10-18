@@ -8,7 +8,7 @@
     <div class="row g-3">
         <div class="col-md-6">
             <label class="form-label">Book Title:</label>
-            <input type="text" name="bookTitle" class="form-control" @bind=Book.BookTitle />
+            <input type="text" name="bookTitle" class="form-control" @bind=Book.Title />
         </div>
     </div>
     <div class="row g-3">
@@ -16,18 +16,18 @@
             <label class="form-label">
                 Book Description:
             </label>
-            <input type="text" name="bookDesc" class="form-control" @bind=Book.BookDesc />
+            <input type="text" name="bookDesc" class="form-control" @bind=Book.Description />
         </div>
     </div>
     <div class="row g-3">
         <div class="col-md-6">
-            <label class="form-label">Book URL</label>
-            <input type="text" name="bookUrl" class="form-control" @bind=Book.BookUrl />
+            <label class="form-label">Book Image URL</label>
+            <input type="text" name="bookImage" class="form-control" @bind=Book.BookImage />
         </div>
     </div>
     <div class="row g-3">
         <div class="col-md-6">
-            <button type="button" class="btn btn-primary" @onclick="() => SaveItem()">Add</button>
+            <button type="button" class="btn btn-primary" @onclick="() => SaveBook()">Add</button>
         </div>
     </div>
 
