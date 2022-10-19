@@ -59,6 +59,9 @@
 @code {
     private void checkPwd()
     {
-      NavigationManager.NavigateTo("/books");
+        bool checkpassword = true;
+        if (checkpassword) {
+            NavigationManager.NavigateTo("/books");
+        }
     }
 }
