@@ -10,11 +10,18 @@
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
             <a class="navbar-brand" href="/">
                 <img src="/images/logo.png" width="80" height="80" class="d-inline-block align-top" alt="">
-                Project Group 8
+                Project Library MS Group 8
             </a>
         </nav>
     </div>
 </div>
+<!-- Side navigation -->
+<div class="sidenav">
+    <a href="/">Login Page</a>
+    <a href="/books">Books</a>
+    <a href="/add-book">Add New Book</a>
+</div>
+
 
 <h2 class="text-center">Book Items</h2>
 
@@ -25,11 +32,14 @@
             <a href="/add-book" class="btn btn-primary">Add New Book</a>
         </div>
         <br />
-        </div>
+    </div>
     <div class="row">
 
         @foreach (var book in GetBooks())
         {
+            <div class="col-md-3">
+
+            </div>
             <div class="col-md-3 text-center">
                 <a href="/book-detail/@book.Id"><img src="@book.BookImage" style="width:50%" alt="@book.Title" title="@book.Title" /></a>
                 <div class="book-title">@book.Title</div>
